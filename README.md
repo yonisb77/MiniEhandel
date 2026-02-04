@@ -1,9 +1,115 @@
-MiniEhandel – Databasprojekt
+# 🛒 MiniEhandel – Databasprojekt
+Yonis Bashir
+**MiniEhandel** är ett SQL-baserat databasprojekt som modellerar grunden för en enkel nätbutik. Fokus ligger på **produkter, lager, kunder och orderhantering**, med korrekt användning av **primär- och främmande nycklar** för att säkerställa dataintegritet.
 
-Detta projekt är en enkel SQL-databas för en nätbutik. Den innehåller tabeller för kategorier, varor, lager, kunder, ordrar och orderrader som är ihopkopplade med primär- och främmande nycklar.
+Projektet är utformat för att visa förståelse för **relationsdatabaser**, normalisering och affärslogik på databasenivå.
 
-Varje vara hör till en kategori och har pris, status och lagersaldo. Kunder sparas med unik e-post och ett automatiskt datum. Ordrar har status (skapad, betald, skickad) och orderrader sparar antal och pris vid köpet.
+---
 
-Databasen använder regler för att säkerställa korrekt data, till exempel att pris och antal inte kan vara negativa. Den innehåller även testdata och vyer för att visa samlad information om ordrar och produkter.
+## 🎯 Syfte
 
-en förbättring till nästa gång kan vara att databasen utökas med fler funktioner, som flera kundadresser, produktbilder, rabatt- och kampanjsystem, samt bättre rapporter för försäljning och lager.
+Syftet med projektet är att skapa en strukturerad och konsekvent databas som kan:
+
+* Hantera produkter och deras kategorier
+* Hålla ordning på lagersaldo
+* Spara kunder med unika uppgifter
+* Skapa och följa ordrar med tillhörande orderrader
+* Säkerställa korrekt data genom regler och begränsningar
+
+---
+
+## 🗄 Databasstruktur
+
+### 📦 Kategorier
+
+* Varje kategori har ett unikt ID och namn
+* Används för att gruppera produkter
+
+### 🛍 Produkter (Varor)
+
+* Varje produkt tillhör exakt en kategori
+* Innehåller information om:
+
+  * Pris
+  * Status (t.ex. aktiv/inaktiv)
+  * Lagersaldo
+
+### 🧮 Lager
+
+* Håller reda på aktuellt lagersaldo per produkt
+* Säkerställer att lagersaldot inte kan bli negativt
+
+### 👤 Kunder
+
+* Sparas med:
+
+  * Unikt kund-ID
+  * Unik e-postadress
+  * Skapandedatum (sätts automatiskt)
+
+### 📑 Ordrar
+
+* Varje order är kopplad till en kund
+* Orderstatus:
+
+  * Skapad
+  * Betald
+  * Skickad
+
+### 🧾 Orderrader
+
+* Kopplar produkter till ordrar
+* Sparar:
+
+  * Antal
+  * Pris vid köptillfället
+* Möjliggör korrekt orderhistorik även om produktpriser ändras senare
+
+---
+
+## 🔑 Relationer & Dataintegritet
+
+* Primär- och främmande nycklar används konsekvent
+* Regler säkerställer att:
+
+  * Pris och antal inte kan vara negativa
+  * Kunder inte kan registreras med samma e-postadress
+  * Orderrader alltid är kopplade till giltiga ordrar och produkter
+
+---
+
+## 👁 Vyer & Testdata
+
+### 📊 Vyer
+
+* Vy för att visa samlad orderinformation (kund, orderstatus, totalbelopp)
+* Vy för produktöversikt med kategori och lagersaldo
+
+### 🧪 Testdata
+
+* Förifylld testdata för:
+
+  * Kategorier
+  * Produkter
+  * Kunder
+  * Ordrar och orderrader
+* Gör databasen enkel att testa och demonstrera direkt
+
+---
+
+## 🔮 Framtida förbättringar
+
+För att vidareutveckla databasen kan följande funktioner läggas till:
+
+* Flera adresser per kund (leverans och faktura)
+* Stöd för produktbilder och media
+* Rabatt- och kampanjsystem
+* Utökad orderhistorik med statuslogg
+* Mer avancerade rapporter för försäljning och lager
+* Index och eventuella triggers för bättre prestanda och affärslogik
+
+---
+
+## 📌 Sammanfattning
+
+**MiniEhandel** är ett välstrukturerat databasprojekt som demonstrerar grundläggande och viktiga koncept inom SQL och databasteknik. Projektet lämpar sig väl för utbildningssyfte och som grund för vidareutveckling mot ett mer komplett e-handelssystem.
