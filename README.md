@@ -1,5 +1,6 @@
 # 🛒 MiniEhandel – Databasprojekt
 Yonis Bashir
+
 **MiniEhandel** är ett SQL-baserat databasprojekt som modellerar grunden för en enkel nätbutik. Fokus ligger på **produkter, lager, kunder och orderhantering**, med korrekt användning av **primär- och främmande nycklar** för att säkerställa dataintegritet.
 
 Projektet är utformat för att visa förståelse för **relationsdatabaser**, normalisering och affärslogik på databasenivå.
